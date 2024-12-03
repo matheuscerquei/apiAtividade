@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.1"
+  },
+  "name": "apiatividade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "db.js",
+  "scripts": {
+    "start": "npx nodemon index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
