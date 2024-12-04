@@ -32,11 +32,11 @@ app.post("/produto", (request, response)=>{
 
 app.get("/produto/:id",(request, response)=>{
     const id = request.params.id;
-    response.json(db.listaProduto(id));
+    response.json(db.listaProduto2(id));
 });
 
 app.get("/produto",(request, response)=>{
-    response.json(db.listaProduto());
+    response.json(db.listaProduto1());
 });
 
 // criação da rota ou endpoint principal ou raiz com a função definindo o que será feito.

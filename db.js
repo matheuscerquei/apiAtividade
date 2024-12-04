@@ -5,17 +5,17 @@ const produto = [
 ];
 
 //Criando uma função .  padrão básico: function nome_da_funcao(){ return dado_a_ser_retornado}
-function listaProduto(){
+function listaProduto1(){
     return produto;
 }
 
 //Criando uma função .  padrão básico: function nome_da_funcao(){ return dado_a_ser_retornado}
-function listaProduto(id){
+function listaProduto2(id){
 return produto.find(c => c.id == id);
 }
 //função para inserir um cliente novo
-function insereProduto(produtos){
-produto.push(produtos);
+function insereProduto(produto){
+produto.push(produto);
 }
 
 function alteraProduto(id,dadosproduto){
@@ -23,6 +23,7 @@ const produtonovo =  produto.find(c => c.id == id);
 if (produtonovo){
 produtonovo.nome =  dadosproduto.nome;
 produtonovo.quantidade = dadosproduto.quantidade;
+produtonovo.preco = dadosproduto.preco;
 } else {
     return("Deu ruim!");
 }    
@@ -35,8 +36,8 @@ produto.splice(indice,1);
 
 //comando para que a função seja acessivel de fora do arquivo db.js
 module.exports = {
-listaProduto,
-listaProduto,
+listaProduto1,
+listaProduto2,
 insereProduto,
 alteraProduto,
 removeProduto
