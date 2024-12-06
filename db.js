@@ -1,12 +1,16 @@
+const mysql = require("mysql2/promise");
+const conexao = createPool(process.env.CONNECTION_STRING);
+
 // "Banco de dados" em memória
-const produto = [
+/*const produto = [
     { id: 1, nome: 'Produto 1', quantidade: 10, preco: 100.00 },
     { id: 2, nome: 'Produto 2', quantidade: 5, preco: 50.00 },
-];
+];*/
 
 //Criando uma função .  padrão básico: function nome_da_funcao(){ return dado_a_ser_retornado}
-function listaProduto1(){
-    return produto;
+async function listaclientes(){
+    const resultado =  await conexao.query("SELEC * FROM cliente");
+    return resultado[0]; 
 }
 
 //Criando uma função .  padrão básico: function nome_da_funcao(){ return dado_a_ser_retornado}
@@ -36,7 +40,7 @@ produto.splice(indice,1);
 
 //comando para que a função seja acessivel de fora do arquivo db.js
 module.exports = {
-listaProduto1,
+listaclientes,
 listaProduto2,
 insereProduto,
 alteraProduto,
